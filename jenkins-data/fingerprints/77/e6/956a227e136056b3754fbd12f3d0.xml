@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2025-04-12 20:23:43.944 UTC</timestamp>
+  <md5sum>77e6956a227e136056b3754fbd12f3d0</md5sum>
+  <fileName>Credential id=github name=nikolovsk/****** (GitHub credentials for nikolovsk)</fileName>
+  <usages>
+    <entry>
+      <string>KIII-04</string>
+      <ranges>1-12</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
