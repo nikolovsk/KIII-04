@@ -1,16 +1,37 @@
-node {
-    def app
+pipeline {
+  agent any
+
+  environment {
+    IMAGE_NAME = "mjovanovik/kiii-jenkins"
+  }
+
+  stages {
     stage('Clone repository') {
+      steps {
         checkout scm
+      }
     }
+
     stage('Build image') {
-       app = docker.build("mjovanovik/kiii-jenkins")
+      steps {
+        script {
+          app = docker.build("${IMAGE_NAME}")
+        }
+      }
     }
-    stage('Push image') {   
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+
+    stage('Push image') {
+      steps {
+        script {
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
             app.push("${env.BRANCH_NAME}-latest")
-            // signal the orchestrator that there is a new version
+          }
         }
+      }
     }
+  }
 }
+
+
+

@@ -1,5 +1,25 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson.model.Queue_-State>
-  <counter>75</counter>
-  <items/>
+  <counter>80</counter>
+  <items>
+    <hudson.model.Queue_-WaitingItem>
+      <actions>
+        <hudson.model.CauseAction>
+          <causeBag class="linked-hash-map">
+            <entry>
+              <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+              <int>1</int>
+            </entry>
+          </causeBag>
+        </hudson.model.CauseAction>
+      </actions>
+      <id>80</id>
+      <task class="hudson.model.FreeStyleProject">KIII-04</task>
+      <inQueueSince>1744494162559</inQueueSince>
+      <timestamp>
+        <time>1744494162559</time>
+        <timezone>Etc/UTC</timezone>
+      </timestamp>
+    </hudson.model.Queue_-WaitingItem>
+  </items>
 </hudson.model.Queue_-State>
