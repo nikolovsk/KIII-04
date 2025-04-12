@@ -1,10 +1,5 @@
 pipeline {
   agent any
-
-  environment {
-    IMAGE_NAME = "mjovanovik/kiii-jenkins"
-  }
-
   stages {
     stage('Clone repository') {
       steps {
@@ -17,6 +12,7 @@ pipeline {
         script {
           app = docker.build("${IMAGE_NAME}")
         }
+
       }
     }
 
@@ -28,10 +24,12 @@ pipeline {
             app.push("${env.BRANCH_NAME}-latest")
           }
         }
+
       }
     }
+
+  }
+  environment {
+    IMAGE_NAME = 'mjovanovik/kiii-jenkins'
   }
 }
-
-
-
